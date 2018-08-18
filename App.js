@@ -1,18 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default class App extends React.Component {
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      text: ''
+    }
+  }
+
   render() {
     return (
       <View style={{
-          flex:1,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems:'center'
+          padding:10,
+          marginTop: 50
         }}>
-        <View style={{backgroundColor:'red', height: 50, width: 50}} ></View>
-        <View style={{backgroundColor:'yellow', height: 50, width: 50}}></View>
-        <View style={{backgroundColor:'green', height: 50, width: 50}}></View>
+        <TextInput
+          style={{height:40}}
+          placeholder = "Hello, please type here"
+          onChangeText = {(text) => this.setState({text})}
+        />
+        <Text>{this.state.text}</Text>
       </View>
     );
   }
