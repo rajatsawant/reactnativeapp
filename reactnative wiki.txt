@@ -1,0 +1,6 @@
+To run app:
+npm start, open in Expo app.
+
+
+For images:
+<Image source={} style={{width:100, height:100}}>
